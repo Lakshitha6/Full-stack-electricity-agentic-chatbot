@@ -1,0 +1,32 @@
+providers:
+  primary:
+    name: gemini
+    model: gemini-3.5-flash
+    api_key_env: GEMINI_API_KEY
+    timeout: 10
+    retries: 1
+    embedding_model: gemini-embedding-001
+  fallback:
+    name: groq
+    model: llama-3.3-70b-versatile
+    api_key_env: GROQ_API_KEY
+    timeout: 8
+    retries: 1
+    embedding_model: null
+
+
+settings:
+  max_tokens: 1024
+  temperature: 0.2
+  fallback_on_error: true
+  fallback_errors:
+    - 429  # Rate limit
+    - 500  # Server error
+    - 503  # Unavailable
+
+    
+sql_generation:
+  allowed_tables: ["usage"]
+  allowed_columns: ["units", "month", "price", "paid_amount", "balance", "electricity_id"]
+  max_rows: 10
+  require_where_electricity_id: true

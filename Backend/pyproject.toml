@@ -1,0 +1,31 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi[standard]>=0.136.1",
+    "pyyaml>=6.0.3",
+    "supabase>=2.30.0",
+    "uvicorn>=0.47.0",
+    "sqlglot==25.3.1",
+    "langgraph==0.2.53",
+    "langchain-core==0.3.25",
+    "pytest==8.3.4",
+    "pytest-asyncio==0.24.0",
+    "redis==5.0.1",
+    "rq==1.15.1",
+    "python-jose[cryptography]==3.3.0",
+]
+
+
+[tool.pyright]
+# Tells the linter to use the directory containing pyproject.toml as the root path
+extraPaths = ["."]
+typeCheckingMode = "off"
+
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"

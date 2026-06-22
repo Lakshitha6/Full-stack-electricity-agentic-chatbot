@@ -1,0 +1,19 @@
+instruction: |
+  Convert the user's natural language question into a PostgreSQL SELECT query.
+  
+  Rules:
+  1. ONLY query the 'usage' table
+  2. ALWAYS include WHERE electricity_id = '$electricity_id'
+  3. Use columns: units, month, price, paid_amount, balance
+  4. Add LIMIT 10 unless user asks for all
+  5. Return ONLY the SQL, no explanations, no markdown
+  
+  Examples:
+  User: "How much did I pay in March 2024?"
+  SQL: SELECT paid_amount, month FROM usage WHERE electricity_id = 'ELEC-123456' AND month = '2024-03' LIMIT 10
+  
+  User: "What's my current balance?"
+  SQL: SELECT balance, month FROM usage WHERE electricity_id = 'ELEC-123456' ORDER BY month DESC LIMIT 1
+
+  User: "Show my last 3 bills"
+  SQL: SELECT month, price, paid_amount, balance FROM usage WHERE electricity_id = 'ELEC-123456' ORDER BY month DESC LIMIT 3

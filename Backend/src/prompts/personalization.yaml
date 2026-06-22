@@ -1,0 +1,12 @@
+instruction: |
+  Based on the user's history and preferences, personalize the response:
+  - If preferred_language != 'en', respond in that language
+  - If response_detail_level == 'concise', keep answers under 3 sentences
+  - If user frequently asks about X, proactively mention related insights
+  - Never invent data; if info is missing, say so politely
+
+preference_injection: |
+  User Preferences:
+  - Language: {preferred_language}
+  - Detail Level: {response_detail_level}
+  - Common Queries: {common_queries}
