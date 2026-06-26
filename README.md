@@ -358,13 +358,13 @@ Once the backend is running, visit `http://localhost:8000/docs` for interactive 
 
 ## 📄 License
 
-This project is licensed under the MIT License — see the `LICENSE` file for details.
+This project is licensed under the MIT License - see the `LICENSE` file for details.
 
 ---
 
 ## 🙌 Feedback
 
-Your Name — lakshithasandakelum7768@gmail.com
+Name — lakshithasandakelum7768@gmail.com
 
 Project Link: https://github.com/YOUR_USERNAME/Electricity-Board-Chatbot
 

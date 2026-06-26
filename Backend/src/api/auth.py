@@ -61,7 +61,7 @@ async def download_id(nic: str):
 
 # Endpoint for get current user profile
 @router.get("/profile")
-async def get_profile(current_user: dict = Depends(get_current_user)):  # ← Use dependency
+async def get_profile(current_user: dict = Depends(get_current_user)):
     """Get current user profile (requires valid JWT)"""
     return {
         "electricity_id": current_user.electricity_id,
